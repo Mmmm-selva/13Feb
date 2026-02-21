@@ -1,6 +1,6 @@
-num1 = float(input())
-num2 = float(input())
-operator = input()
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+operator = input("Enter operator (+, -, *, /): ")
 
 if operator == '+':
     print("Result =", num1 + num2)
@@ -13,3 +13,62 @@ elif operator == '/':
         print("Result =", num1 / num2)
     else:
         print("Division by zero error")
+
+# Receiving Numbers:
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+operator = input("Enter operator (+, -, *, /): ")
+
+result = 0
+valid_op = True
+
+# (Stage 1)
+if operator == '+':
+    result = num1 + num2
+elif operator == '-':
+    result = num1 - num2
+elif operator == '*':
+    result = num1 * num2
+elif operator == '/':
+    if num2 != 0:
+        result = num1 / num2
+    else:
+        print("Error: Division by zero")
+        valid_op = False
+else:
+    print("Invalid operator")
+    valid_op = False
+
+# (Stage 2)
+if valid_op:
+    print(f"Result = {result}")
+    
+    if result > 0:
+        print("Positive")
+    elif result < 0:
+        print("Negative")
+    else:
+        print("Zero")
+
+# 1. (input)
+name = input("Enter student name: ")
+mark1 = int(input("Enter Mark 1: "))
+mark2 = int(input("Enter Mark 2: "))
+mark3 = int(input("Enter Mark 3: "))
+
+# 2. (Calculate)
+total = mark1 + mark2 + mark3
+percentage = (total / 300) * 100
+
+# 3. (Grade Logic)
+if percentage >= 75: grade = "A"
+elif percentage >= 60: grade = "B"
+elif percentage >= 40: grade = "C"
+else: grade = "F"
+
+# 4.(Output)
+print(f"\n{name}")
+print(f"Total: {total}/300")
+print(f"Percentage: {percentage:.1f}%")
+print(f"Grade: {grade}")
+
